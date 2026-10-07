@@ -26,10 +26,17 @@ This example was tested on Mistral AI (Without License), ChatGPT(Without license
 
 ## Using Skills
 
-You can also benefit from Skills file: download this repo and upload skills in your AI agent (like Codex). 
-Once skills is added to your agent, you don't need to upload it each time you want the AI to suggest MoTion patterns for you. 
-You can refer the skills and hop, use it.
-I will update this section for more details later on.
+The repository also provides a reusable `SKILL.md` that can be used by AI coding agents such as Codex and Claude Code.
+
+The skill automatically routes requests to the appropriate MoTion and FAST documentation:
+
+- `MoTion.md` for general MoTion syntax and matching
+- `FASTTypeScript-MoTion.md` for TypeScript AST patterns
+- `FASTJava-MoTion.md` for Java AST patterns
+- `FASTXML-MoTion.md` for XML AST patterns
+- `MoTion-Transformation.md` for source code transformations
+
+After installing the skill in an AI coding agent, the referenced documentation can be used automatically without uploading the files for every request.
 
 # For the future:
 - I will try to adapt it to be used in Pharo directly ... we are ambitious but will give it a try :)
