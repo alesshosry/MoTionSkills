@@ -1,16 +1,19 @@
 # MoTionSkills
 Don't know how to use MoTion? Complicated DSL? No worries!
 We have a solution for you. A way to benefit from AI so it will create patterns for you.
-This is a book that helps you to create MoTion patterns using AI;
+This is a repo for a skill that helps you to create MoTion patterns using AI;
 
 ## MoTion
-If you want the AI to know how to use MoTion you can refer to [this page](https://github.com/alesshosry/MoTionPatternsBook/blob/main/MoTion.md).
+If you want the AI to know how to use MoTion you can refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/main/references/MoTion.md).
 
 ## FASTTypeScript(TypeScript AST) + MoTion
 If you want to let the AI create patterns that match TypeScript AST using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/main/references/FASTTypeScript-MoTion.md).
 
 ## FASTJava(Java AST) + MoTion
 If you want to let the AI create patterns that match Java AST using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/main/references/FASTJava-MoTion.md).
+
+## FASTXML(XML AST) + MoTion
+If you want to let the AI create patterns that match XML using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/WorkOfTrainee/references/FASTXML-MoTion.md).
 
 # Usage
 
