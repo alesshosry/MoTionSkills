@@ -11,18 +11,16 @@ description: Create MoTion patterns in Pharo to match models or apply refactorin
 1. Identify the target AST domain from the user request.
 2. Load base MoTion guidance from `references/MoTion.md`.
 3. Load exactly one domain guide:
-
-* TypeScript AST: `references/FASTTypeScript-MoTion.md`
-* XML AST: `references/FASTXML-MoTion.md`
-* Java AST: `references/FASTJava-MoTion.md`
-
+  * TypeScript AST: `references/FASTTypeScript-MoTion.md`
+  * XML AST: `references/FASTXML-MoTion.md`
+  * Java AST: `references/FASTJava-MoTion.md`
 4. If the request involves transforming the original source code, also load:
    `references/MoTion-Transformation.md`.
 5. If the user does not know where to find or install the repositories needed for MoTion or the FAST libraries, direct them to the `Repositories.md` file, which explains how to obtain and install the correct repositories.
-6. Build or revise the pattern in Pharo syntax.
-7. For transformation requests, build the corresponding `MoTionRule` and use the appropriate execution method.
+6. Build or revise the pattern using Pharo syntax.
+7. For refactoring requests, build the corresponding `MoTionRule` and use the appropriate execution method.
 8. Return the pattern and a short explanation of key selectors/operators used.
-9. When possible, validate the generated transformation by reparsing the resulting source.
+9. When possible, validate the generated source by reparsing the resulting text.
 
 ## Domain Routing
 
@@ -37,25 +35,11 @@ Use this routing consistently:
 * If the request mentions Java, tags/attributes, or FAST Java nodes, use:
   `references/MoTion.md` and `references/FASTJava-MoTion.md`.
 
-When the request asks for source code transformation, also load:
+* If the request asks for source code transformation/refactoring, use:
 `references/MoTion-Transformation.md`.
 
-If the request is ambiguous, ask whether the target is TypeScript AST, Java AST or XML AST before writing the final pattern.
-
-## Transformation Rules
-
-When generating source transformations:
-
-1. Use `as:` when the transformation targets the actual matched AST node.
-2. Use `@name` when a matched value needs to be captured.
-3. Use `*rest` when several remaining list elements need to be captured as a collection.
-4. Use `bindings` with `executeWithBindings` for source replacements.
-5. Use `removalBindings` with `executeRemoval` for source removals.
-6. Prefer documented FAST structures and existing transformation examples over inventing new AST properties or paths.
-7. When the exact FAST structure is uncertain, consult the relevant domain guide before generating the pattern.
-8. When possible, reparse the resulting source to check that the transformation remains valid.
-9. Do not claim that a transformation has been tested unless it has actually been executed.
-
+* If the request is ambiguous, ask whether the target is TypeScript AST, Java AST or XML AST before writing the final pattern.
+ 
 ## Output Rules
 
 1. Return valid Pharo/MoTion pattern code.
@@ -65,6 +49,7 @@ When generating source transformations:
 5. For transformation requests, include the `MoTionRule` configuration and the appropriate execution method.
 6. Clearly distinguish replacement bindings from removal bindings.
 7. Do not invent FAST node structures when the required structure is already documented.
+8. Be careful not to add unnecessary parentheses in patterns.
 
 ## References
 
