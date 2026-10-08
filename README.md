@@ -36,27 +36,25 @@ If you want to let the AI create patterns that match XML using MoTion, you can a
 
 ## Manually
 
-You can open any AI agent, provide it with the skill and start writing prompts such as the below:
+You can use any platform such as ChatGPT, provide it with the md files (better if you download the repo and upload the convenient files) and write a prompt like this one:
 
-_Ok i Will give you 2 files to read: one that describe MoTion, which allows you to create a pattern to do pattern matching in Pharo over models. And another one that describes how to use MoTion with FASTTypeScript, which is a metamodel that allows you to represent the AST of TypeScript in Pharo. Inside this documentation, all FASTTypeScript classes that represent TypeScript entities are listed.
-Given these two documentations, I want you to create an example of Typescript, that contains 3 methods in a class: one with switch case, one with if else, and one with other statements.
-Then you create a pattern in MoTion to match the parsed typescript code that contain switch case_
+_Ok i Will give you 2 files to read: one that describe MoTion, which allows you to create a pattern to do pattern matching in Pharo over models. And another one that describes how to use MoTion with FASTTypeScript, which is a metamodel that allows you to represent the AST of TypeScript in Pharo. Inside this documentation, all FASTTypeScript classes that represent TypeScript entities are listed. Given these two documentations, I want you to create an example of Typescript, that contains 3 methods in a class: one with switch case, one with if else, and one with other statements. Then you create a pattern in MoTion to match the parsed typescript code that contain switch case_
 
-This example was tested on Mistral AI (Without License), ChatGPT(Without license) and Copilot (with License). All three agents were able to generate the example and the pattern correctly except for one, with mini mini error in a property name.
+This example was tested on Mistral AI (Without License), ChatGPT(Without license) and Copilot (with License). All three LLMs given provided with the same files, were able to generate the example and the pattern correctly except for one, with mini mini error in a property name.
 
 ## Using Skills
 
-The repository also provides a reusable `SKILL.md` that can be used by AI coding agents such as Codex and Claude Code.
+The repository also provides a reusable `SKILL.md` that can be used by agents such as Codex and Claude Code.
 
-The skill automatically routes requests to the appropriate MoTion and FAST documentation:
+Once the skill is called in the prompt _/skillName_, it is analyzed with the given prompt, and the appropriate references are fetched to reply to the user. For the moment, the available references are:
 
-- `MoTion.md` for general MoTion syntax and matching
+- `MoTion.md` for general MoTion syntax and matching features
 - `FASTTypeScript-MoTion.md` for TypeScript AST patterns
 - `FASTJava-MoTion.md` for Java AST patterns
 - `FASTXML-MoTion.md` for XML AST patterns
-- `MoTion-Transformation.md` for source code transformations
+- `MoTion-Transformation.md` for refactoring with MoTion
 
-After installing the skill in an AI coding agent, the referenced documentation can be used automatically without uploading the files for every request.
+After installing the skill in an agent, the referenced documentation can be used automatically without uploading files for every request.
 
 # For the future:
 - I will try to adapt it to be used in Pharo directly ... we are ambitious but will give it a try :)
