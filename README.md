@@ -1,9 +1,26 @@
-# MoTionSkills
-Don't know how to use MoTion? Complicated DSL? No worries!
-We have a solution for you. A way to benefit from AI so it will create patterns for you.
-This is a repo for a skill that helps you to create MoTion patterns using AI;
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22662698.svg)](https://doi.org/10.5281/zenodo.22662698)
 
-## MoTion
+# MoTionSkills
+If you're here, this means you know Pharo and you're trying to use MoTion, but you need some help. Well, you're on the right track :)
+
+Don't know how to use MoTion? Complicated DSL? No worries!
+We have a solution for you. A way to benefit from Artificial Intelligence so it will create patterns for you.
+This is a repo for a "skill" that helps you to create MoTion patterns using AI;
+If you don't know the concept of skills, I recommend you to check this [article](https://support.claude.com/en/articles/12512176-what-are-skills). 
+
+## Skill
+The skill file includes a description of the skill, links to references, and other supporting material.
+Most importantly, the skill has been tested, and the results were published in a [2026 paper](https://doi.org/10.5281/zenodo.22662698). The paper covers the testing process, the models evaluated, and the full set of findings.
+
+Currently, the skill helps developers create patterns in MoTion, match them, and apply refactorings. Refactoring is the newest feature, added in 2026, and works by using bindings to transform the matched part. At the moment, the skill supports matching following metamodels:
+
+- FASTTypeScript
+- FASTJava
+- FASTXML
+
+Keep in mind that MoTion is not tied to a specific metamodel. It is dynamic and can perform pattern matching on any defined metamodel. Refactoring, however, is currently supported only for FAST metamodels.
+
+<!-- ## MoTion
 If you want the AI to know how to use MoTion you can refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/main/references/MoTion.md).
 
 ## FASTTypeScript(TypeScript AST) + MoTion
@@ -13,13 +30,13 @@ If you want to let the AI create patterns that match TypeScript AST using MoTion
 If you want to let the AI create patterns that match Java AST using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/main/references/FASTJava-MoTion.md).
 
 ## FASTXML(XML AST) + MoTion
-If you want to let the AI create patterns that match XML using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/WorkOfTrainee/references/FASTXML-MoTion.md).
+If you want to let the AI create patterns that match XML using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/WorkOfTrainee/references/FASTXML-MoTion.md). -->
 
 # Usage
 
 ## Manually
 
-You can open any AI agent, provide it with the md files (better if you download the repo and upload the convinient files) and paste something like this message:
+You can open any AI agent, provide it with the skill and start writing prompts such as the below:
 
 _Ok i Will give you 2 files to read: one that describe MoTion, which allows you to create a pattern to do pattern matching in Pharo over models. And another one that describes how to use MoTion with FASTTypeScript, which is a metamodel that allows you to represent the AST of TypeScript in Pharo. Inside this documentation, all FASTTypeScript classes that represent TypeScript entities are listed.
 Given these two documentations, I want you to create an example of Typescript, that contains 3 methods in a class: one with switch case, one with if else, and one with other statements.
