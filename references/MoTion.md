@@ -4,6 +4,7 @@ MoTion is a new object pattern matcher in Pharo. A pattern matcher works on a fi
 MoTion can deal with Pharo objects independently of the model containing the data. 
 MoTion combines both features for graph pattern matching and object matching, and by that it enables expressing patterns declaratively and applying matches over complex object structures.
 
+[![Latest Moose](https://github.com/moosetechnology/MoTion/actions/workflows/tests.yml/badge.svg)](https://github.com/moosetechnology/MoTion/actions/workflows/tests.yml)
 
 ## Installation
 To install MoTion, go to the Playground (`Ctrl+OW`) in your Pharo image and execute the following Metacello script (select it and press Do-it button or `Ctrl+D`):
@@ -261,9 +262,7 @@ pattern match: anXMLNodeList.
 
 ## Finally
 
-for source code transformations using MoTion, see the dedicated MoTion-Transformation.md reference file.
-
-Don't hesitate to ask. More examples can be found in tests package.
-Also if you are not familiar with MoTion, using it for the first time, no worries; here are some pages with examples: https://github.com/alesshosry/MoTionPatternsBookForAI. You can check them OR provide the files to AI agents so they can create the patterns for you ;)
-Also, don't hesitate to have a look at Iguala which is the same matcher implemented in Python: https://github.com/aranega/iguala
-Finally, well, just enjoy it :)
+Don't hesitate to ask. More examples can be found in tests package. 
+Also if you are not familiar with MoTion, using it for the first time, no worries; here are some pages with examples: https://github.com/alesshosry/MoTionPatternsBookForAI. You can check them OR provide the files to AI agents so they can create the patterns for you ;) 
+Also, don't hesitate to have a look at Iguala which is the same matcher implemented in Python:  https://github.com/aranega/iguala
+Finally, well, just enjoy it :)  
