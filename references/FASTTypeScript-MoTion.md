@@ -208,189 +208,2052 @@ node genericChildren.
 - Prefer `#genericChildren` when you mean “direct child”.
 
 ### 6) FASTTypeScript entities
-In order to express a pattern effitiently, MoTion needs to know the class names representing the entities of TypeScript. This is why we are listing them here in accordance to there slots that can be used while expressing a MoTio pattern. Knowing that this is not the final list, many properties are still missing and need to be adapted. This will be done in the near future. Meanwhile the list is:
+To express a pattern efficiently, MoTion needs to know the names of the classes that represent TypeScript entities. This is why we list them here, along with the slots that can be used when writing a MoTion pattern:
 ```
-FASTTypeScriptAbstractMethodSignature
-FASTTypeScriptAccessibilityModifier
-FASTTypeScriptAddingTypeAnnotation
-FASTTypeScriptAmbientDeclaration
-FASTTypeScriptArguments, slots: newExpressionArgumentsOwner 
-FASTTypeScriptArray, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptArrayPattern, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptArrayType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptArrowFunction, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptAsserts
-FASTTypeScriptAssertsAnnotation, slots: functionDeclarationReturnTypeOwner 
-FASTTypeScriptAssignmentPattern
-FASTTypeScriptCallSignature
-FASTTypeScriptCatchClause, slots: tryStatementHandlerOwner 
-FASTTypeScriptClass, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptClassBody, slots: classDeclarationBodyOwner 
-FASTTypeScriptClassDeclaration, slots: programClassDeclarationOwner body name parentLoopStatement statementContainer tWithDeclarationsDeclarationsOwner declarations modifiers 
-FASTTypeScriptClassHeritage
-FASTTypeScriptClassStaticBlock
-FASTTypeScriptComment
-FASTTypeScriptCompilationUnit
-FASTTypeScriptComputedPropertyName
-FASTTypeScriptConditionalType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptConstraint
-FASTTypeScriptConstructSignature
-FASTTypeScriptConstructorType, slots: type parameters 
-FASTTypeScriptDecorator
-FASTTypeScriptDefaultType
-FASTTypeScriptERROR, slots: source element 
-FASTTypeScriptElseClause
-FASTTypeScriptEnumAssignment
-FASTTypeScriptEnumBody, slots: enumDeclarationBodyOwner 
-FASTTypeScriptEnumDeclaration, slots: body name programEnumDeclarationOwner parentLoopStatement statementContainer tWithDeclarationsDeclarationsOwner declarations modifiers 
-FASTTypeScriptEscapeSequence
-FASTTypeScriptExistentialType
-FASTTypeScriptExportClause
-FASTTypeScriptExportSpecifier, slots: name alias 
-FASTTypeScriptExpression, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptExtendsClause, slots: type_arguments 
-FASTTypeScriptExtendsTypeClause, slots: type 
-FASTTypeScriptFinallyClause, slots: tryStatementFinalizerOwner body 
-FASTTypeScriptFlowMaybeType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptFormalParameters, slots: functionTypeParametersOwner constructorTypeParametersOwner methodDefinitionParametersOwner functionDeclarationParametersOwner 
-FASTTypeScriptFunctionDeclaration, slots: body name parameters return_type 
-FASTTypeScriptFunctionSignature
-FASTTypeScriptFunctionType, slots: parameters assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptGeneratorFunction
-FASTTypeScriptGeneratorFunctionDeclaration
-FASTTypeScriptGenericType, slots: name type_arguments assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptHashBangLine
-FASTTypeScriptHtmlComment
-FASTTypeScriptIdentifier, slots: enumDeclarationNameOwner exportSpecifierNameOwner functionDeclarationNameOwner indexSignatureNameOwner nestedIdentifierObjectOwner optionalParameterPatternOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner exportSpecifierAliasOwner methodDefinitionReturnTypeOwner 
-FASTTypeScriptImplementsClause
-FASTTypeScriptImport
-FASTTypeScriptImportAlias
-FASTTypeScriptImportAttribute
-FASTTypeScriptImportClause
-FASTTypeScriptImportRequireClause
-FASTTypeScriptImportSpecifier
-FASTTypeScriptIndexSignature, slots: index_type type name 
-FASTTypeScriptIndexTypeQuery
-FASTTypeScriptInferType
-FASTTypeScriptInterfaceBody, slots: interfaceDeclarationBodyOwner 
-FASTTypeScriptInterfaceDeclaration, slots: programInterfaceDeclarationOwner name body parentLoopStatement statementContainer tWithDeclarationsDeclarationsOwner declarations modifiers 
-FASTTypeScriptInternalModule
-FASTTypeScriptIntersectionType
-FASTTypeScriptJsxText
-FASTTypeScriptLexicalDeclaration
-FASTTypeScriptLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptLiteralType
-FASTTypeScriptLookupType
-FASTTypeScriptMappedTypeClause
-FASTTypeScriptMetaProperty
-FASTTypeScriptMethodDefinition, slots: return_type name body parameters 
-FASTTypeScriptMethodSignature
-FASTTypeScriptModule
-FASTTypeScriptNamedImports
-FASTTypeScriptNamespaceExport
-FASTTypeScriptNamespaceImport
-FASTTypeScriptNestedIdentifier, slots: object property 
-FASTTypeScriptNestedTypeIdentifier
-FASTTypeScriptObjectAssignmentPattern
-FASTTypeScriptObjectPattern
-FASTTypeScriptObjectType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptOmittingTypeAnnotation
-FASTTypeScriptOptingTypeAnnotation
-FASTTypeScriptOptionalChain
-FASTTypeScriptOptionalParameter, slots: type pattern 
-FASTTypeScriptOptionalType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptOverrideModifier
-FASTTypeScriptPair
-FASTTypeScriptPairPattern
-FASTTypeScriptParenthesizedType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptPredefinedType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptPrivatePropertyIdentifier, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptProgram, slots: classDeclarations enumDeclarations interfaceDeclarations source element 
-FASTTypeScriptPropertyIdentifier, slots: nestedIdentifierPropertyOwner methodDefinitionNameOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptPropertySignature
-FASTTypeScriptPublicFieldDefinition
-FASTTypeScriptReadonlyType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptRegex, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptRegexFlags
-FASTTypeScriptRegexPattern
-FASTTypeScriptRequiredParameter
-FASTTypeScriptRestPattern
-FASTTypeScriptRestType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptShorthandPropertyIdentifier
-FASTTypeScriptShorthandPropertyIdentifierPattern
-FASTTypeScriptSpreadElement
-FASTTypeScriptStatement, slots: parentLoopStatement statementContainer 
-FASTTypeScriptStringFragment
-FASTTypeScriptSuper, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptSwitchBody
-FASTTypeScriptSwitchCase
-FASTTypeScriptSwitchDefault
-FASTTypeScriptTemplateLiteralType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTemplateString
-FASTTypeScriptTemplateSubstitution
-FASTTypeScriptTemplateType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptThis, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptThisType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTupleType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTypeAliasDeclaration
-FASTTypeScriptTypeAnnotation, slots: indexSignatureTypeOwner optionalParameterTypeOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner exportSpecifierAliasOwner methodDefinitionReturnTypeOwner functionDeclarationReturnTypeOwner 
-FASTTypeScriptTypeArguments, slots: extendsClauseTypeArgumentsOwner genericTypeTypeArgumentsOwner newExpressionTypeArgumentsOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner exportSpecifierAliasOwner methodDefinitionReturnTypeOwner 
-FASTTypeScriptTypeAssertion, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTypeIdentifier, slots: classDeclarationNameOwner constructorTypeTypeOwner extendsTypeClauseTypeOwner genericTypeNameOwner indexSignatureIndexTypeOwner interfaceDeclarationNameOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTypeParameter, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTypeParameters, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTypePredicate, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptTypeQuery, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptUndefined, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptUnionType, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTTypeScriptVariableDeclaration
-FASTTypeScriptVariableDeclarator
-FASTTypeScriptAbstractClassDeclaration
-FASTTypeScriptAsExpression
-FASTTypeScriptAssignmentExpression
-FASTTypeScriptAugmentedAssignmentExpression
-FASTTypeScriptAwaitExpression
-FASTTypeScriptBinaryExpression
-FASTTypeScriptCallExpression
-FASTTypeScriptFunctionExpression
-FASTTypeScriptInstantiationExpression
-FASTTypeScriptMemberExpression
-FASTTypeScriptNewExpression, slots: arguments type_arguments 
-FASTTypeScriptNonNullExpression
-FASTTypeScriptObject
-FASTTypeScriptParenthesizedExpression, slots: withStatementObjectOwner ifStatementConditionOwner 
-FASTTypeScriptSatisfiesExpression
-FASTTypeScriptSequenceExpression
-FASTTypeScriptSubscriptExpression
-FASTTypeScriptTernaryExpression
-FASTTypeScriptUnaryExpression
-FASTTypeScriptUpdateExpression
-FASTTypeScriptYieldExpression
-FASTTypeScriptBoolean
-FASTTypeScriptNull
-FASTTypeScriptNumber
-FASTTypeScriptString
-FASTTypeScriptBreakStatement
-FASTTypeScriptContinueStatement
-FASTTypeScriptDebuggerStatement
-FASTTypeScriptDoStatement
-FASTTypeScriptEmptyStatement
-FASTTypeScriptExportStatement
-FASTTypeScriptExpressionStatement
-FASTTypeScriptForInStatement, slots: body 
-FASTTypeScriptForStatement
-FASTTypeScriptIfStatement, slots: condition consequence 
-FASTTypeScriptImportStatement
-FASTTypeScriptLabeledStatement
-FASTTypeScriptReturnStatement
-FASTTypeScriptStatementBlock, slots: finallyClauseBodyOwner forInStatementBodyOwner functionDeclarationBodyOwner ifStatementConsequenceOwner methodDefinitionBodyOwner tryStatementBodyOwner withStatementBodyOwner 
-FASTTypeScriptStatementIdentifier
-FASTTypeScriptSwitchStatement
-FASTTypeScriptThrowStatement
-FASTTypeScriptTryStatement, slots: body finalizer handler 
-FASTTypeScriptWhileStatement
-FASTTypeScriptWithStatement, slots: body object 
-FASTTypeScriptTypePredicateAnnotation
-FASTTypeScriptFalse
-FASTTypeScriptTrue
+# Metamodel: FAST-TypeScript-Model
+
+## FASTTypeScriptAbstractClassDeclaration
+
+- **Superclass:** `FASTTypeScriptClassDeclaration`
+- **Slots:** none
+
+## FASTTypeScriptAbstractMethodSignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+
+## FASTTypeScriptAccessibilityModifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptAddingTypeAnnotation
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptAmbientDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `childrenNodes`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptArguments
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `newExpressionArgumentsOwner`
+
+## FASTTypeScriptArray
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `childrenNodes`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptArrayPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPattern`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `assignmentPatternLeftOwner`
+
+## FASTTypeScriptArrayType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptArrowFunction
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `parameter`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptAsExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptAsserts
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptAssertsAnnotation
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTReturnType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `functionDeclarationReturnTypeOwner`
+
+## FASTTypeScriptAssignmentExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:** none
+
+## FASTTypeScriptAssignmentPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `left`
+
+## FASTTypeScriptAugmentedAssignmentExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `operator`
+
+## FASTTypeScriptAwaitExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptBinaryExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `operator`
+
+## FASTTypeScriptBoolean
+
+- **Superclass:** `FASTTypeScriptLiteral`
+- **Traits:** `FASTTBooleanLiteral`
+- **Slots:** none
+
+## FASTTypeScriptBreakStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `label`
+
+## FASTTypeScriptCallExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPrimaryExpression + FASTTypeScriptTType`
+- **Slots:**
+  - `arguments`
+  - `function`
+  - `type_arguments`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptCallSignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+
+## FASTTypeScriptCatchClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `body`
+  - `parameter`
+  - `tryStatementHandlerOwner`
+  - `type`
+
+## FASTTypeScriptClass
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `body`
+  - `decorator`
+  - `name`
+  - `type_parameters`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptClassBody
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `classBodyOwner`
+  - `classDeclarationBodyOwner`
+  - `decorator`
+
+## FASTTypeScriptClassDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration + FASTTypeScriptTWithDeclarations + FASTTypeScriptTWithModifiers`
+- **Slots:**
+  - `body`
+  - `decorator`
+  - `name`
+  - `programClassDeclarationOwner`
+  - `type_parameters`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+  - `declarations`
+  - `modifiers`
+
+## FASTTypeScriptClassHeritage
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptClassStaticBlock
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `body`
+
+## FASTTypeScriptComment
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptCompilationUnit
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptComputedPropertyName
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptConditionalType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptConstraint
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+  - `typeParameterConstraintOwner`
+
+## FASTTypeScriptConstructSignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `parameters`
+  - `type`
+  - `type_parameters`
+
+## FASTTypeScriptConstructorType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTType`
+- **Slots:**
+  - `parameters`
+  - `type_parameters`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptContinueStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `label`
+
+## FASTTypeScriptDebuggerStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:** none
+
+## FASTTypeScriptDecorator
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+  - `classBodyDecoratorOwner`
+  - `classDeclarationDecoratorOwner`
+  - `classDecoratorOwner`
+  - `exportStatementDecoratorOwner`
+  - `optionalParameterDecoratorOwner`
+  - `publicFieldDefinitionDecoratorOwner`
+  - `requiredParameterDecoratorOwner`
+
+## FASTTypeScriptDefaultType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+  - `typeParameterValueOwner`
+
+## FASTTypeScriptDoStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `condition`
+
+## FASTTypeScriptERROR
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FamixTHasImmediateSource`
+- **Slots:**
+  - `source`
+  - `element`
+
+## FASTTypeScriptElseClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+  - `ifStatementAlternativeOwner`
+
+## FASTTypeScriptEmptyStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:** none
+
+## FASTTypeScriptEntity
+
+- **Superclass:** `MooseEntity`
+- **Traits:** `FASTTEntity + FASTTWithComments + TEntityMetaLevelDependency`
+- **Slots:**
+  - `abstractMethodSignatureNameOwner`
+  - `abstractMethodSignatureReturnTypeOwner`
+  - `addingTypeAnnotationOwner`
+  - `ambientDeclarationOwner`
+  - `arrayOwner`
+  - `arrayPatternOwner`
+  - `arrayTypeOwner`
+  - `arrowFunctionReturnTypeOwner`
+  - `asExpressionOwner`
+  - `assertsAnnotationOwner`
+  - `assertsOwner`
+  - `augmentedAssignmentExpressionOperatorOwner`
+  - `awaitExpressionOwner`
+  - `binaryExpressionOperatorOwner`
+  - `callExpressionArgumentsOwner`
+  - `callExpressionFunctionOwner`
+  - `callSignatureReturnTypeOwner`
+  - `catchClauseParameterOwner`
+  - `classHeritageOwner`
+  - `computedPropertyNameOwner`
+  - `constraintOwner`
+  - `decoratorOwner`
+  - `defaultTypeOwner`
+  - `elseClauseOwner`
+  - `enumAssignmentNameOwner`
+  - `enumBodyNameOwner`
+  - `exportClauseOwner`
+  - `expressionStatementOwner`
+  - `flowMaybeTypeOwner`
+  - `forInStatementKindOwner`
+  - `forInStatementOperatorOwner`
+  - `forStatementConditionOwner`
+  - `forStatementIncrementOwner`
+  - `forStatementInitializerOwner`
+  - `functionExpressionReturnTypeOwner`
+  - `functionSignatureReturnTypeOwner`
+  - `generatorFunctionDeclarationReturnTypeOwner`
+  - `generatorFunctionReturnTypeOwner`
+  - `genericChildren`
+  - `genericParent`
+  - `implementsClauseOwner`
+  - `importAliasOwner`
+  - `importAttributeOwner`
+  - `importClauseOwner`
+  - `indexSignatureSignOwner`
+  - `indexTypeQueryOwner`
+  - `inferTypeOwner`
+  - `instantiationExpressionFunctionOwner`
+  - `interfaceBodyOwner`
+  - `internalModuleNameOwner`
+  - `intersectionTypeOwner`
+  - `lexicalDeclarationKindOwner`
+  - `literalTypeOwner`
+  - `lookupTypeOwner`
+  - `methodSignatureNameOwner`
+  - `methodSignatureReturnTypeOwner`
+  - `moduleNameOwner`
+  - `namedImportsOwner`
+  - `namespaceExportOwner`
+  - `namespaceImportOwner`
+  - `nestedTypeIdentifierModuleOwner`
+  - `nonNullExpressionOwner`
+  - `objectAssignmentPatternLeftOwner`
+  - `objectOwner`
+  - `objectPatternOwner`
+  - `objectTypeOwner`
+  - `omittingTypeAnnotationOwner`
+  - `optingTypeAnnotationOwner`
+  - `optionalTypeOwner`
+  - `pairKeyOwner`
+  - `pairPatternKeyOwner`
+  - `pairPatternValueOwner`
+  - `parenthesizedTypeOwner`
+  - `programOwner`
+  - `propertySignatureNameOwner`
+  - `publicFieldDefinitionNameOwner`
+  - `readonlyTypeOwner`
+  - `requiredParameterNameOwner`
+  - `restPatternOwner`
+  - `restTypeOwner`
+  - `returnStatementOwner`
+  - `satisfiesExpressionOwner`
+  - `sequenceExpressionOwner`
+  - `spreadElementOwner`
+  - `statementBlockOwner`
+  - `stringOwner`
+  - `switchBodyOwner`
+  - `switchCaseValueOwner`
+  - `templateLiteralTypeOwner`
+  - `templateStringOwner`
+  - `templateSubstitutionOwner`
+  - `templateTypeOwner`
+  - `throwStatementOwner`
+  - `tupleTypeOwner`
+  - `typeAnnotationOwner`
+  - `typeArgumentsOwner`
+  - `typeAssertionOwner`
+  - `typeParametersOwner`
+  - `typeQueryOwner`
+  - `unaryExpressionOperatorOwner`
+  - `unionTypeOwner`
+  - `updateExpressionOperatorOwner`
+  - `variableDeclarationOwner`
+  - `variableDeclaratorNameOwner`
+  - `yieldExpressionOwner`
+  - `endPos`
+  - `startPos`
+  - `comments`
+
+## FASTTypeScriptEnumAssignment
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+
+## FASTTypeScriptEnumBody
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `enumDeclarationBodyOwner`
+  - `name`
+
+## FASTTypeScriptEnumDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration + FASTTypeScriptTWithDeclarations + FASTTypeScriptTWithModifiers`
+- **Slots:**
+  - `body`
+  - `name`
+  - `programEnumDeclarationOwner`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+  - `declarations`
+  - `modifiers`
+
+## FASTTypeScriptEscapeSequence
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptExistentialType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptExportClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptExportSpecifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `alias`
+  - `name`
+
+## FASTTypeScriptExportStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `declaration`
+  - `decorator`
+  - `source`
+
+## FASTTypeScriptExpression
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptExpressionStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Traits:** `FASTTExpressionStatement`
+- **Slots:**
+  - `expression`
+
+## FASTTypeScriptExtendsClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `type_arguments`
+
+## FASTTypeScriptExtendsTypeClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptFalse
+
+- **Superclass:** `FASTTypeScriptBoolean`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptFinallyClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `body`
+  - `tryStatementFinalizerOwner`
+
+## FASTTypeScriptFlowMaybeType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptForInStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `body`
+  - `kind`
+  - `operator`
+
+## FASTTypeScriptForStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `condition`
+  - `increment`
+  - `initializer`
+
+## FASTTypeScriptFormalParameters
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `abstractMethodSignatureParametersOwner`
+  - `arrowFunctionParametersOwner`
+  - `callSignatureParametersOwner`
+  - `constructSignatureParametersOwner`
+  - `constructorTypeParametersOwner`
+  - `functionDeclarationParametersOwner`
+  - `functionExpressionParametersOwner`
+  - `functionSignatureParametersOwner`
+  - `functionTypeParametersOwner`
+  - `generatorFunctionDeclarationParametersOwner`
+  - `generatorFunctionParametersOwner`
+  - `methodDefinitionParametersOwner`
+  - `methodSignatureParametersOwner`
+
+## FASTTypeScriptFunctionDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `body`
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptFunctionExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `body`
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptFunctionSignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptFunctionType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTType`
+- **Slots:**
+  - `parameters`
+  - `type_parameters`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptGeneratorFunction
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `body`
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptGeneratorFunctionDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `body`
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptGenericType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `type_arguments`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptHashBangLine
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptHtmlComment
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTOptionalField + FASTTypeScriptTPattern + FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `arrowFunctionParameterOwner`
+  - `enumDeclarationNameOwner`
+  - `exportSpecifierNameOwner`
+  - `functionDeclarationNameOwner`
+  - `functionExpressionNameOwner`
+  - `functionSignatureNameOwner`
+  - `generatorFunctionDeclarationNameOwner`
+  - `generatorFunctionNameOwner`
+  - `importSpecifierAliasOwner`
+  - `indexSignatureNameOwner`
+  - `nestedIdentifierObjectOwner`
+  - `optionalParameterNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `exportSpecifierAliasOwner`
+  - `methodDefinitionReturnTypeOwner`
+  - `requiredParameterTypeOwner`
+  - `assignmentPatternLeftOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptIfStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `alternative`
+  - `condition`
+  - `consequence`
+
+## FASTTypeScriptImplementsClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptImport
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptImportAlias
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `childrenNodes`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptImportAttribute
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptImportClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptImportRequireClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `source`
+
+## FASTTypeScriptImportSpecifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `alias`
+  - `name`
+
+## FASTTypeScriptImportStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `source`
+
+## FASTTypeScriptIndexSignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+  - `sign`
+
+## FASTTypeScriptIndexTypeQuery
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptInferType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptInstantiationExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `function`
+  - `type_arguments`
+
+## FASTTypeScriptInterfaceBody
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+  - `interfaceDeclarationBodyOwner`
+
+## FASTTypeScriptInterfaceDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration + FASTTypeScriptTWithDeclarations + FASTTypeScriptTWithModifiers`
+- **Slots:**
+  - `body`
+  - `name`
+  - `programInterfaceDeclarationOwner`
+  - `type_parameters`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+  - `declarations`
+  - `modifiers`
+
+## FASTTypeScriptInternalModule
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `body`
+  - `name`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptIntersectionType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptJsxText
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptLabeledStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `label`
+
+## FASTTypeScriptLexicalDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `kind`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptLiteral
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTLiteral`
+- **Slots:**
+  - `primitiveValue`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptLiteralType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptLookupType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptMappedTypeClause
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+
+## FASTTypeScriptMemberExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPattern + FASTTypeScriptTPrimaryExpression + FASTTypeScriptTType`
+- **Slots:**
+  - `optionalChain`
+  - `assignmentPatternLeftOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptMetaProperty
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptMethodDefinition
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `body`
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+
+## FASTTypeScriptMethodSignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+  - `parameters`
+  - `return_type`
+  - `type_parameters`
+
+## FASTTypeScriptModel
+
+- **Superclass:** `MooseModel`
+- **Traits:** `FASTTEntityCreator + FASTTypeScriptTEntityCreator`
+- **Slots:** none
+
+## FASTTypeScriptModule
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `body`
+  - `name`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptNamedImports
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptNamespaceExport
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptNamespaceImport
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptNestedIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `object`
+  - `property`
+
+## FASTTypeScriptNestedTypeIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `module`
+  - `name`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptNewExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `arguments`
+  - `type_arguments`
+
+## FASTTypeScriptNonNullExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPattern + FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `childrenNode`
+  - `assignmentPatternLeftOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptNull
+
+- **Superclass:** `FASTTypeScriptLiteral`
+- **Traits:** `FASTTNullPointerLiteral + FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptNumber
+
+- **Superclass:** `FASTTypeScriptLiteral`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptObject
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `childrenNodes`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptObjectAssignmentPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `left`
+
+## FASTTypeScriptObjectPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPattern`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `assignmentPatternLeftOwner`
+
+## FASTTypeScriptObjectType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptOmittingTypeAnnotation
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptOptingTypeAnnotation
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptOptionalChain
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `memberExpressionOptionalChainOwner`
+  - `subscriptExpressionOptionalChainOwner`
+
+## FASTTypeScriptOptionalParameter
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `decorator`
+  - `name`
+  - `type`
+
+## FASTTypeScriptOptionalType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptOverrideModifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptPair
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `key`
+
+## FASTTypeScriptPairPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `key`
+  - `value`
+
+## FASTTypeScriptParenthesizedExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `doStatementConditionOwner`
+  - `ifStatementConditionOwner`
+  - `switchStatementValueOwner`
+  - `type`
+  - `whileStatementConditionOwner`
+  - `withStatementObjectOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptParenthesizedType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptPredefinedType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptPrivatePropertyIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptProgram
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `(FASTTEntity + FamixTHasImmediateSource withPrecedenceOf: FamixTHasImmediateSource)`
+- **Slots:**
+  - `childrenNodes`
+  - `classDeclarations`
+  - `enumDeclarations`
+  - `interfaceDeclarations`
+  - `source`
+  - `element`
+
+## FASTTypeScriptPropertyIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `methodDefinitionNameOwner`
+  - `nestedIdentifierPropertyOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptPropertySignature
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+  - `type`
+
+## FASTTypeScriptPublicFieldDefinition
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `decorator`
+  - `name`
+  - `type`
+
+## FASTTypeScriptReadonlyType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptRegex
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `flags`
+  - `pattern`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptRegexFlags
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `regexFlagsOwner`
+
+## FASTTypeScriptRegexPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `regexPatternOwner`
+
+## FASTTypeScriptRequiredParameter
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `decorator`
+  - `name`
+  - `type`
+
+## FASTTypeScriptRestPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPattern`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `assignmentPatternLeftOwner`
+
+## FASTTypeScriptRestType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptReturnStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptSatisfiesExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptSequenceExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `childrenNodes`
+
+## FASTTypeScriptShorthandPropertyIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptShorthandPropertyIdentifierPattern
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptSpreadElement
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptStatement
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTStatement`
+- **Slots:**
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptStatementBlock
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `catchClauseBodyOwner`
+  - `childrenNodes`
+  - `classStaticBlockBodyOwner`
+  - `finallyClauseBodyOwner`
+  - `forInStatementBodyOwner`
+  - `functionDeclarationBodyOwner`
+  - `functionExpressionBodyOwner`
+  - `generatorFunctionBodyOwner`
+  - `generatorFunctionDeclarationBodyOwner`
+  - `ifStatementConsequenceOwner`
+  - `internalModuleBodyOwner`
+  - `methodDefinitionBodyOwner`
+  - `moduleBodyOwner`
+  - `tryStatementBodyOwner`
+  - `withStatementBodyOwner`
+
+## FASTTypeScriptStatementIdentifier
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `breakStatementLabelOwner`
+  - `continueStatementLabelOwner`
+  - `labeledStatementLabelOwner`
+
+## FASTTypeScriptString
+
+- **Superclass:** `FASTTypeScriptLiteral`
+- **Traits:** `FASTTStringLiteral + FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `childrenNodes`
+  - `exportStatementSourceOwner`
+  - `importRequireClauseSourceOwner`
+  - `importStatementSourceOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptStringFragment
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptSubscriptExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Traits:** `FASTTypeScriptTPattern + FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `optionalChain`
+  - `assignmentPatternLeftOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptSuper
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptSwitchBody
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNodes`
+  - `switchStatementBodyOwner`
+
+## FASTTypeScriptSwitchCase
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `value`
+
+## FASTTypeScriptSwitchDefault
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:** none
+
+## FASTTypeScriptSwitchStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `body`
+  - `value`
+
+## FASTTypeScriptTDeclaration (Trait)
+
+- **Traits:** `FASTTStatement`
+- **Slots:**
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+  - `endPos`
+  - `startPos`
+
+## FASTTypeScriptTEntityCreator (Trait)
+
+- **Slots:** none
+
+## FASTTypeScriptTModifier (Trait)
+
+- **Slots:**
+  - `tWithModifiersModifiersOwner`
+
+## FASTTypeScriptTOptionalField (Trait)
+
+- **Slots:**
+  - `exportSpecifierAliasOwner`
+  - `methodDefinitionReturnTypeOwner`
+  - `requiredParameterTypeOwner`
+
+## FASTTypeScriptTPattern (Trait)
+
+- **Slots:**
+  - `assignmentPatternLeftOwner`
+
+## FASTTypeScriptTPrimaryExpression (Trait)
+
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `expressionStatementOwner`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `endPos`
+  - `startPos`
+
+## FASTTypeScriptTPrimaryType (Trait)
+
+- **Traits:** `FASTTypeScriptTType`
+- **Slots:** none
+
+## FASTTypeScriptTReturnType (Trait)
+
+- **Slots:**
+  - `functionDeclarationReturnTypeOwner`
+
+## FASTTypeScriptTType (Trait)
+
+- **Slots:** none
+
+## FASTTypeScriptTWithDeclarations (Trait)
+
+- **Slots:**
+  - `declarations`
+
+## FASTTypeScriptTWithModifiers (Trait)
+
+- **Slots:**
+  - `modifiers`
+
+## FASTTypeScriptTemplateLiteralType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTemplateString
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `childrenNodes`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTemplateSubstitution
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptTemplateType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTernaryExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:** none
+
+## FASTTypeScriptThis
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptThisType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptThrowStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `childrenNode`
+
+## FASTTypeScriptTrue
+
+- **Superclass:** `FASTTypeScriptBoolean`
+- **Traits:** `FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+
+## FASTTypeScriptTryStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `body`
+  - `finalizer`
+  - `handler`
+
+## FASTTypeScriptTupleType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTypeAliasDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `name`
+  - `type_parameters`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptTypeAnnotation
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTOptionalField + FASTTypeScriptTReturnType`
+- **Slots:**
+  - `catchClauseTypeOwner`
+  - `childrenNode`
+  - `constructSignatureTypeOwner`
+  - `optionalParameterTypeOwner`
+  - `parenthesizedExpressionTypeOwner`
+  - `propertySignatureTypeOwner`
+  - `publicFieldDefinitionTypeOwner`
+  - `variableDeclaratorTypeOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `exportSpecifierAliasOwner`
+  - `methodDefinitionReturnTypeOwner`
+  - `requiredParameterTypeOwner`
+  - `functionDeclarationReturnTypeOwner`
+
+## FASTTypeScriptTypeArguments
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTOptionalField`
+- **Slots:**
+  - `callExpressionTypeArgumentsOwner`
+  - `childrenNodes`
+  - `extendsClauseTypeArgumentsOwner`
+  - `genericTypeTypeArgumentsOwner`
+  - `instantiationExpressionTypeArgumentsOwner`
+  - `newExpressionTypeArgumentsOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+  - `exportSpecifierAliasOwner`
+  - `methodDefinitionReturnTypeOwner`
+  - `requiredParameterTypeOwner`
+
+## FASTTypeScriptTypeAssertion
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTypeIdentifier
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `classDeclarationNameOwner`
+  - `classNameOwner`
+  - `interfaceDeclarationNameOwner`
+  - `mappedTypeClauseNameOwner`
+  - `nestedTypeIdentifierNameOwner`
+  - `typeAliasDeclarationNameOwner`
+  - `typeParameterNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTypeParameter
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `constraint`
+  - `name`
+  - `value`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTypeParameters
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `abstractMethodSignatureTypeParametersOwner`
+  - `arrowFunctionTypeParametersOwner`
+  - `callSignatureTypeParametersOwner`
+  - `childrenNodes`
+  - `classDeclarationTypeParametersOwner`
+  - `classTypeParametersOwner`
+  - `constructSignatureTypeParametersOwner`
+  - `constructorTypeTypeParametersOwner`
+  - `functionDeclarationTypeParametersOwner`
+  - `functionExpressionTypeParametersOwner`
+  - `functionSignatureTypeParametersOwner`
+  - `functionTypeTypeParametersOwner`
+  - `generatorFunctionDeclarationTypeParametersOwner`
+  - `generatorFunctionTypeParametersOwner`
+  - `interfaceDeclarationTypeParametersOwner`
+  - `methodDefinitionTypeParametersOwner`
+  - `methodSignatureTypeParametersOwner`
+  - `typeAliasDeclarationTypeParametersOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTypePredicate
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression`
+- **Slots:**
+  - `name`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptTypePredicateAnnotation
+
+- **Superclass:** `FASTTypeScriptTypeAnnotation`
+- **Traits:** `FASTTExpression`
+- **Slots:** none
+
+## FASTTypeScriptTypeQuery
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNode`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptUnaryExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `operator`
+
+## FASTTypeScriptUndefined
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTPattern + FASTTypeScriptTPrimaryExpression`
+- **Slots:**
+  - `assignmentPatternLeftOwner`
+  - `importSpecifierNameOwner`
+  - `typePredicateNameOwner`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptUnionType
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTExpression + FASTTypeScriptTPrimaryType`
+- **Slots:**
+  - `childrenNodes`
+  - `argumentOwner`
+  - `assignedIn`
+  - `parentConditional`
+  - `parentExpression`
+  - `parentExpressionLeft`
+  - `parentExpressionRight`
+  - `returnOwner`
+
+## FASTTypeScriptUpdateExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `operator`
+
+## FASTTypeScriptVariableDeclaration
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Traits:** `FASTTypeScriptTDeclaration`
+- **Slots:**
+  - `childrenNodes`
+  - `exportStatementDeclarationOwner`
+  - `tWithDeclarationsDeclarationsOwner`
+  - `parentLoopStatement`
+  - `statementContainer`
+
+## FASTTypeScriptVariableDeclarator
+
+- **Superclass:** `FASTTypeScriptEntity`
+- **Slots:**
+  - `name`
+  - `type`
+
+## FASTTypeScriptWhileStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `condition`
+
+## FASTTypeScriptWithStatement
+
+- **Superclass:** `FASTTypeScriptStatement`
+- **Slots:**
+  - `body`
+  - `object`
+
+## FASTTypeScriptYieldExpression
+
+- **Superclass:** `FASTTypeScriptExpression`
+- **Slots:**
+  - `childrenNode`
 ```
