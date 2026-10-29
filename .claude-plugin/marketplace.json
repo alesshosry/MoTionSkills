@@ -1,0 +1,15 @@
+{
+  "name": "motion-skills",
+  "description": "MoTion pattern skills for Pharo FAST models",
+  "owner": {
+    "name": "alesshosry"
+  },
+  "plugins": [
+    {
+      "name": "motion",
+      "description": "Create MoTion patterns and refactorings over FAST models (Java, TypeScript, XML)",
+      "source": "./",
+      "skills": ["./"]
+    }
+  ]
+}
