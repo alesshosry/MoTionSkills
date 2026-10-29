@@ -32,6 +32,27 @@ If you want to let the AI create patterns that match Java AST using MoTion, you 
 ## FASTXML(XML AST) + MoTion
 If you want to let the AI create patterns that match XML using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/WorkOfTrainee/references/FASTXML-MoTion.md). -->
 
+# Installation
+
+## Claude Code
+
+Add this repository as a plugin marketplace, then install the `motion` plugin:
+
+```bash
+claude plugin marketplace add alesshosry/MoTionSkills
+claude plugin install motion@motion-skills
+```
+
+## Other agents (Codex, opencode, Cursor…)
+
+Use the [skills CLI](https://github.com/vercel-labs/skills), replacing `<agent>` with your agent:
+
+```bash
+npx skills add alesshosry/MoTionSkills -a <agent>
+```
+
+On chat platforms (ChatGPT, Mistral, Copilot…), upload the Markdown files instead, as described in [Manually](#manually).
+
 # Usage
 
 ## Manually
@@ -44,17 +65,13 @@ This example was tested on Mistral AI (Without License), ChatGPT(Without license
 
 ## Using Skills
 
-The repository also provides a reusable `SKILL.md` that can be used by agents such as Codex and Claude Code.
-
-Once the skill is called in the prompt _/skillName_, it is analyzed with the given prompt, and the appropriate references are fetched to reply to the user. For the moment, the available references are:
+Once the skill is installed (see [Installation](#installation)), call it in the prompt with _/motion-pharo-ast-patterns_: it is analyzed with the given prompt, and the appropriate references are fetched to reply to the user, without uploading files for every request. For the moment, the available references are:
 
 - `MoTion.md` for general MoTion syntax and matching features
 - `FASTTypeScript-MoTion.md` for TypeScript AST patterns
 - `FASTJava-MoTion.md` for Java AST patterns
 - `FASTXML-MoTion.md` for XML AST patterns
 - `MoTion-Transformation.md` for refactoring with MoTion
-
-After installing the skill in an agent, the referenced documentation can be used automatically without uploading files for every request.
 
 # For the future:
 - I will try to adapt it to be used in Pharo directly ... we are ambitious but will give it a try :)
