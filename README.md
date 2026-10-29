@@ -32,6 +32,29 @@ If you want to let the AI create patterns that match Java AST using MoTion, you 
 ## FASTXML(XML AST) + MoTion
 If you want to let the AI create patterns that match XML using MoTion, you can ask it to refer to [this page](https://github.com/alesshosry/MoTionSkills/blob/WorkOfTrainee/references/FASTXML-MoTion.md). -->
 
+# Installation
+
+## Claude Code
+
+Add this repository as a plugin marketplace, then install the `motion` plugin:
+
+```bash
+claude plugin marketplace add alesshosry/MoTionSkills
+claude plugin install motion@motion-skills
+```
+
+## Other agents (Codex, opencode, Cursor…)
+
+Use the [skills CLI](https://github.com/vercel-labs/skills), replacing `<agent>` with your agent:
+
+```bash
+npx skills add alesshosry/MoTionSkills -a <agent>
+```
+
+## Chat platforms (ChatGPT, Mistral, Copilot…)
+
+Download the repository and upload the Markdown files you need, as described in [Manually](#manually).
+
 # Usage
 
 ## Manually
