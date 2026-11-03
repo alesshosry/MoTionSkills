@@ -142,92 +142,51 @@ node children.
 - Using `#'children*'` matches *descendants*, producing cross-products when nested structures exist.
 - Prefer `#children` when you mean “direct child”.
 
-## 5) FASTJava entities
-In order to express a pattern efficiently, MoTion needs to know the class names representing the entities of Java. This is why we are listing them here in accordance to their slots that can be used while expressing a MoTion pattern. In Java the list is more updated than any other metamodel because FASTJava has been implemented long time ago.
-```
- FASTJavaAnnotation, slots: elements arrayOwner parentAnnotation javaModifierOwner name invokedIn 
-FASTJavaArrayAccess, slots: javaVariableAssignmentOwner receiverOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaArrayAnnotationElement, slots: values arrayOwner parentAnnotation assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaArrayInitializer, slots: arrayOwner parentAnnotation assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaAssertStatement, slots: parentLoopStatement statementContainer 
-FASTJavaAssignmentExpression, slots: operator arrayOwner parentAnnotation receiverOwner variable assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaBreakStatement, slots: parentLoopStatement statementContainer 
-FASTJavaCaseStatement, slots: javaCaseStatementSwitchOwner fastBehaviouralParent statements parentLoopStatement statementContainer 
-FASTJavaCastExpression, slots: type receiverOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaCatchPartStatement, slots: tryOwner body catchedTypes parameter parentLoopStatement statementContainer 
-FASTJavaClassDeclaration, slots: compilationUnit interfaces superclass javaDeclarationOwner declarations modifiers name invokedIn parentLoopStatement statementContainer source element 
-FASTJavaComment, slots: content container 
-FASTJavaCompilationUnit, slots: packageDeclaration importDeclarations classDeclarations interfaceDeclarations enumDeclarations 
-FASTJavaConditionalExpression, slots: receiverOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaContinueStatement, slots: parentLoopStatement statementContainer 
-FASTJavaDoWhileStatement, slots: parentLoopStatement statementContainer 
-FASTJavaEmptyDimExpression, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaEnumDeclaration, slots: compilationUnit constants interfaces javaDeclarationOwner declarations modifiers name invokedIn parentLoopStatement statementContainer source element 
-FASTJavaExpressionStatement, slots: expression parentLoopStatement statementContainer 
-FASTJavaFieldAccess, slots: fieldName javaVariableAssignmentOwner receiverOwner receiver assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaForEachStatement, slots: fieldname type parentLoopStatement statementContainer 
-FASTJavaForStatement, slots: parentLoopStatement statementContainer 
-FASTJavaIfStatement, slots: parentLoopStatement statementContainer 
-FASTJavaImportDeclaration, slots: isStatic isOnDemand compilationUnit qualifiedName 
-FASTJavaInfixOperation, slots: operator arrayOwner parentAnnotation receiverOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaInitializer, slots: isStatic javaDeclarationOwner source element 
-FASTJavaInterfaceDeclaration, slots: compilationUnit interfaces javaDeclarationOwner declarations modifiers name invokedIn parentLoopStatement statementContainer source element 
-FASTJavaLabeledStatement, slots: label parentLoopStatement statementContainer 
-FASTJavaLambdaExpression, slots: assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner parameters 
-FASTJavaLiteral, slots: arrayOwner parentAnnotation receiverOwner 
-FASTJavaMethodEntity, slots: type throws typeParameters javaDeclarationOwner modifiers statementBlock parameters name invokedIn source element 
-FASTJavaMethodInvocation, slots: receiverOwner receiver invoked assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner arguments name invokedIn 
-FASTJavaMethodReference, slots: receiver assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner name invokedIn 
-FASTJavaModifier, slots: token javaModifierOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaNewExpression, slots: type receiverOwner receiver assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner arguments 
-FASTJavaOuterThis, slots: type receiverOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaPackageDeclaration, slots: compilationUnit qualifiedName 
-FASTJavaParameter, slots: hasVariableArguments type variable assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner parentAssignmentExpression parameterOwner name invokedIn 
-FASTJavaQualifiedName, slots: namespace namespaceOwner qualifiedNameOwner javaVariableAssignmentOwner name invokedIn 
-FASTJavaReturnStatement, slots: expression parentLoopStatement statementContainer 
-FASTJavaStatement, slots: parentLoopStatement statementContainer 
-FASTJavaStatementBlock, slots: javaTryCatchOwner javaTryFinallyOwner javaCatchPartStatementOwner fastBehaviouralParent statements parentLoopStatement statementContainer 
-FASTJavaSwitchStatement, slots: cases parentLoopStatement statementContainer 
-FASTJavaSynchronizedStatement, slots: parentLoopStatement statementContainer 
-FASTJavaThrowStatement, slots: parentLoopStatement statementContainer 
-FASTJavaTryCatchStatement, slots: try catches finally resources parentLoopStatement statementContainer 
-FASTJavaTypeName, slots: javaTypeNameTypeExpressionOwner javaTypeNameQualify arrayOwner parentAnnotation assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner name invokedIn 
-FASTJavaTypeParameterExpression, slots: javaMethodTypeParameterOwner types assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner name invokedIn 
-FASTJavaTypePattern, slots: type variable assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaUnaryExpression, slots: operator isPrefixedUnaryExpression assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaVarDeclStatement, slots: declarators javaTryResourceOwner type javaDeclarationOwner modifiers parentLoopStatement statementContainer 
-FASTJavaVariableDeclarator, slots: varDeclOwner variable 
-FASTJavaVariableExpression, slots: javaCastExpressionTypeOwner javaCatchParameterOwnler javaClassPropertyOwner javaMethodReferenceOwner javaMethodTypeOwner javaNewExpressionOwner javaOuterThisOwner javaParameterTypeOwner javaParameterVariableOwner javaTypePatternVariableOwner javaVarDeclTypeOwner javaVariableDeclaratorOwner javaVariableAssignmentOwner receiverOwner assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner name invokedIn 
-FASTJavaWhileStatement, slots: parentLoopStatement statementContainer 
-FASTJavaDefaultCaseStatement
-FASTJavaLabeledCaseStatement
-FASTJavaBooleanLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaCharacterLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaDoubleLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaFloatLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaIntegerLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaLongLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaNullLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaStringLiteral, slots: primitiveValue assignedIn parentExpressionLeft parentExpressionRight parentConditionalStatement expressionStatementOwner returnOwner parentExpression argumentOwner 
-FASTJavaEmptyMethodDeclaration
-FASTJavaNewArray
-FASTJavaNewClassExpression, slots: declarations 
-FASTJavaQualifiedTypeName, slots: namespace 
-FASTJavaClassProperty, slots: fieldName type arrayOwner parentAnnotation 
-FASTJavaEnumConstant, slots: parentEnum 
-FASTJavaIdentifier, slots: javaForEachStatementFieldNameOwner 
-FASTJavaThis
-FASTJavaTypeExpression, slots: catchOwner javaClassDeclarationInterfaceOwner javaClassDeclarationSuperclassOwner javaEnumDeclarationInterfaceOwner javaForEachStatementTypeOwner javaInterfaceDeclarationInterfaceOwner javaTypePatternTypeOwner 
-FASTJavaArrayTypeExpression
-FASTJavaClassTypeExpression, slots: javaMethodThrowsOwner typeParameterOwner typeName arguments 
-FASTJavaPrimitiveTypeExpression
-FASTJavaBooleanTypeExpression
-FASTJavaByteTypeExpression
-FASTJavaCharTypeExpression
-FASTJavaDoubleTypeExpression
-FASTJavaFloatTypeExpression
-FASTJavaIntTypeExpression
-FASTJavaLongTypeExpression
-FASTJavaShortTypeExpression
-FASTJavaVoidTypeExpression
-```
+## 5) FASTJava entities and their slots: query the image, do not memorize
+
+The FAST-Java metamodel moves (new traits, renamed relations, new slots), so any
+list written here goes stale. The running image is the source of truth. Before
+writing a pattern, look the entity up there:
+
+- Which class represents a construct? Parse a snippet and look at what comes out:
+  ```smalltalk
+  model := JavaSmaCCProgramNodeImporterVisitor new parseCodeString: 'class T { void m(java.util.List<String> l) { l.size(); } }'.
+  (model allModelEntities collect: [ :e | e class name -> (e startPos -> e endPos) ]) asArray.
+  ```
+  The `startPos`/`endPos` pairs tell which entity covers which text; `FASTJavaMethodInvocation`
+  spans receiver and arguments, its `type` or `typeName` sub-entities span the type text
+  including any `<...>` type arguments.
+- Which slots can a pattern name? Ask the class:
+  ```smalltalk
+  (FASTJavaMethodInvocation allSlots collect: #name) asArray.
+  ```
+  Slot names are the property names usable in `% { #slot <=> ... }` and in paths such as
+  `#'receiver>startPos'`.
+- Which relations exist, with their opposites and types? Read the Fame description:
+  ```smalltalk
+  (FASTJavaMethodInvocation metadescription allAttributes collect: [ :a | a name -> a type name ]) asArray.
+  ```
+- Which concrete classes stand behind an abstract one (e.g. the literals)? Ask for subclasses:
+  `FASTJavaLiteral allSubclasses`.
+
+Parsing a method body is enough for most probes; a class-level field such as
+`class T { String x = ...; }` needs the full `parseCodeString:` form, not `parseCodeMethodString:`.
+
+## 6) Useful idioms
+
+- There is no top node: start from `FASTJavaModel % { #allModelEntities <=> (Entity % { ... } as: #x) }`
+  and read the bindings with `pattern collectBinding: #x for: model` (answers a plain
+  collection, possibly empty; `collectBindings:for:` answers dictionaries for several names).
+- Locate an entity by its position in the source: `(#startPos <=> start). (#endPos <=> end)`
+  for an exact range, or `(#startPos lessOrEqualTo: start). (#endPos higherOrEqualTo: end)`
+  for an enclosing one; when several enclose it, keep the innermost with
+  `detectMin: [ :e | e endPos - e startPos ]`.
+- A constraint on a part: `(#receiver <=> (FASTJavaEntity %% { (#startPos lessOrEqualTo: s) }))`;
+  `%%` accepts subclasses, `%` only the exact class. A nil receiver simply does not match.
+- A list with exactly one element: `(#arguments <=> { #'@argument' })`; an empty list:
+  `(#arguments <=> {  })`. Both are exact-length constraints, unlike the shortcut
+  `#arguments <=> aValue`, which means "contains".
+- Several accepted names: `(#name <=> (('exists' orMatches: 'notExists') orMatches: 'isDirectory'))`.
+- `model allWithType: FASTJavaX` answers a MooseGroup (no `detectMin:`); MoTion bindings are
+  ordinary collections. Source text of an entity: slice the original string with
+  `startPos`/`endPos` rather than relying on `sourceCode`, which needs the model's source to be set.
