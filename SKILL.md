@@ -16,10 +16,11 @@ description: Create MoTion patterns in Pharo to match models or apply refactorin
 4. If the request involves transforming the original source code, also load:
    `references/MoTion-Transformation.md`.
 5. If the user does not know where to find or install the repositories needed for MoTion or the FAST libraries, direct them to the `Repositories.md` file, which explains how to obtain and install the correct repositories.
-6. Build or revise the pattern using Pharo syntax.
-7. For refactoring requests, build the corresponding `MoTionRule` and use the appropriate execution method.
-8. Return the pattern and a short explanation of key selectors/operators used.
-9. When possible, validate the generated source by reparsing the resulting text.
+6. Look the entity classes and their slot names up in the running image (parse a snippet, `allSlots`, `metadescription`) instead of trusting a remembered list; each domain guide says how.
+7. Build or revise the pattern using Pharo syntax.
+8. For refactoring requests, build the corresponding `MoTionRule` and use the appropriate execution method.
+9. Return the pattern and a short explanation of key selectors/operators used.
+10. When possible, validate the generated source by reparsing the resulting text.
 
 ## Domain Routing
 
@@ -47,7 +48,7 @@ Use this routing consistently:
 4. When asked to improve an existing pattern, preserve user intent and explain the delta briefly.
 5. For transformation requests, include the `MoTionRule` configuration and the appropriate execution method.
 6. Clearly distinguish replacement bindings from removal bindings.
-7. Do not invent FAST node structures when the required structure is already documented.
+7. Do not invent FAST node structures: use the ones documented, and query the image for the others.
 8. Be careful not to add unnecessary parentheses in patterns.
 
 ## References
