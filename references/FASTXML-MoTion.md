@@ -124,62 +124,10 @@ node genericChildren.
 - Using `#'genericChildren*'` matches *descendants*, producing cross-products when nested structures exist.
 - Prefer `#genericChildren` when you mean “direct child”.
 
-### 6) FASTXML entities
-In order to express a pattern effitiently, MoTion needs to know the class names representing the entities of XML. This is why we are listing them here in accordance to there slots that can be used while expressing a MoTion pattern. Knowing that this is not the final list, many properties are still missing and need to be adapted. This will be done in the near future. Meanwhile the list is:
+### 6) FASTXML entities and their slots: query the image
 
-```smalltalk
-FASTXMLAttDef
-FASTXMLAttValue
-FASTXMLAttlistDecl
-FASTXMLAttribute
-FASTXMLCDSect
-FASTXMLCDStart
-FASTXMLCData
-FASTXMLCharData
-FASTXMLCharRef
-FASTXMLChildren
-FASTXMLComment
-FASTXMLContent
-FASTXMLContentspec
-FASTXMLDefaultDecl
-FASTXMLDoctypedecl
-FASTXMLDocument, slots: source element 
-FASTXMLERROR, slots: source element 
-FASTXMLETag
-FASTXMLElement
-FASTXMLElementdecl
-FASTXMLEmptyElemTag
-FASTXMLEncName
-FASTXMLEntityRef
-FASTXMLEntityValue
-FASTXMLEnumeration
-FASTXMLExternalID
-FASTXMLGEDecl
-FASTXMLMixed
-FASTXMLNDataDecl
-FASTXMLName
-FASTXMLNmtoken
-FASTXMLNotationDecl
-FASTXMLNotationType
-FASTXMLPEDecl
-FASTXMLPEReference
-FASTXMLPI
-FASTXMLPITarget
-FASTXMLProlog
-FASTXMLPseudoAtt
-FASTXMLPseudoAttValue
-FASTXMLPubidLiteral
-FASTXMLPublicID
-FASTXMLSTag
-FASTXMLStringType
-FASTXMLStyleSheetPI
-FASTXMLSystemLiteral
-FASTXMLTokenizedType
-FASTXMLURI
-FASTXMLVersionNum
-FASTXMLXMLDecl
-FASTXMLXmlModelPI
-```
-
-As you notice, no slots in this metamodel, yet ! 
-Also slots are upcoming soon
+The entity classes and their slots change with the metamodel; the running image is the
+source of truth, so do not rely on a list. Parse a snippet and inspect what comes out
+(`node genericChildren collect: #class`, `node class allSlots collect: #name`), or read the Fame
+description (`aClass metadescription allAttributes`). Slot names are the property names a
+`% { ... }` pattern can constrain.
