@@ -10,7 +10,7 @@ This document is dedicated for writing MoTion patterns to match a FASTTypeScript
 
 ```smalltalk
 string := '// some TypeScript code'.
-res := FASTTypeScriptParser new parse: string.
+res := FASTTypeScriptImporter new parse: string.
 "res will be a FASTTypeScriptModel; we need to access the #entities inside👇🏻"
 
 "Program entity: is the top entity of every TypeScript AST"
@@ -94,7 +94,7 @@ string := 'class Example {
   }
 }'.
 
-res := FASTTypeScriptParser new parse: string.
+res := FASTTypeScriptImporter new parse: string.
 prog := (res entities select: [ :ent | ent class = FASTTypeScriptProgram ]) first.
  
 pattern :=  FASTTypeScriptProgram % {
@@ -124,7 +124,7 @@ class Example {
 }
 '.
 
-parsedModel := FASTTypeScriptParser new parse: typescriptCode.
+parsedModel := FASTTypeScriptImporter new parse: typescriptCode.
 prog := (parsedModel entities select: [ :ent | ent class = FASTTypeScriptProgram ]) first.
 
 pattern := FASTTypeScriptProgram % {
@@ -164,7 +164,7 @@ class Calculator {
     }
 }'.
 
-res := FASTTypeScriptParser new parse: str.
+res := FASTTypeScriptImporter new parse: str.
 prog := (res entities select: [ :ent | ent class = FASTTypeScriptProgram ]) first.
 
 emptyElsePattern :=

@@ -10,7 +10,7 @@ This document is dedicated for writing MoTion patterns to match a FASTXML model.
 
 ```smalltalk
 string := '// XML'.
-res := FASTXMLParser new parse: string.
+res := FASTXMLImporter new parse: string.
 "res will be a FASTXMLModel; we need to access the #entities inside👇🏻"
 
 "Document entity: is the top entity of every xml model"
@@ -50,7 +50,7 @@ str := '<data>
   <phone></phone> 
 </data>'.
 
-tree := FASTXMLParser new parse: str.
+tree := FASTXMLImporter new parse: str.
 doc := (tree select: [ :e | e class =  FASTXMLDocument ]) first.
 
 "Extract data of the address"
@@ -76,7 +76,7 @@ str := '<address>
   <phone>(011) 123-4567</phone>
 </address>'.
 
-tree := FASTXMLParser new parse: str.
+tree := FASTXMLImporter new parse: str.
 doc := (tree select: [ :e | e class =  FASTXMLDocument ]) first.
 
 "Extract data of the address"

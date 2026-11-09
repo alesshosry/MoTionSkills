@@ -67,7 +67,7 @@ sourceCode := 'class Calculator {
     }
 }'.
 
-model := FASTTypeScriptParser new parse: sourceCode.
+model := FASTTypeScriptImporter new parse: sourceCode.
 prog := (model entities select: [ :each |
     each class = FASTTypeScriptProgram
 ]) first.
